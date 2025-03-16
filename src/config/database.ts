@@ -31,9 +31,9 @@ const connectDB = async (): Promise<void> => {
     console.log('Connecting to MongoDB...');
     
     const options = {
-      serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-      connectTimeoutMS: 10000, // Connection timeout
-      socketTimeoutMS: 45000, // Socket timeout
+      serverSelectionTimeoutMS: 15000, // Increased from 5000
+      connectTimeoutMS: 30000, // Increased from 10000
+      socketTimeoutMS: 60000, // Increased from 45000
     };
     
     // Create a promise for the connection

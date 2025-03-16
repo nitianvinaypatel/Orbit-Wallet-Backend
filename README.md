@@ -12,6 +12,24 @@ A Node.js REST API for managing users and transactions with MongoDB.
 - Pagination for transaction endpoints
 - MongoDB aggregation framework for efficient queries
 
+## Testing the Deployed API
+
+The backend is now deployed on a server. You can test the API using the following Postman workspace:
+
+[Orbit Wallet Backend Postman Collection](https://www.postman.com/platform-api-7015/workspace/orbit-wallet-backend/request/33656587-a94102a2-d48a-4a49-974b-b35631df1719?action=share&creator=33656587&ctx=documentation)
+
+To test:
+
+1. Click on the URL above - it will redirect you to the Postman web interface
+2. Click the "Fork" button in the top right corner of the Postman interface
+3. Create a new personal workspace or select an existing one to save the fork
+4. Once forked, you can access all the pre-configured API requests
+5. Click on any request in the collection to view its details
+6. Hit the "Send" button to execute the request against the deployed API
+7. View the response and test different parameters as needed
+
+No additional setup is required as the API is already deployed and accessible.
+
 ## Prerequisites
 
 - Node.js (v14 or higher)

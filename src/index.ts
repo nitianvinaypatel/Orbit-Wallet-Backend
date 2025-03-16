@@ -9,6 +9,10 @@ import { errorHandler } from './utils/errorHandler';
 // Load environment variables
 dotenv.config();
 
+// Log environment for debugging
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI);
+
 // Initialize express app
 const app: Application = express();
 
