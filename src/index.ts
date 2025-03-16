@@ -46,19 +46,79 @@ app.get('/health', (req: Request, res: Response) => {
 // Root route
 app.get('/', (req: Request, res: Response) => {
   res.status(200).send(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Wallet API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .endpoint {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .method {
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .code {
+            background: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
     <h1>Orbit Wallet API</h1>
     <p>Welcome to the Orbit Wallet API. This is the backend service for the Orbit Wallet application.</p>
     
+    <h2>Base URL</h2>
+    <p class="code">https://orbitwallet.vercel.app</p>
+
+        <h2>Testing in Postman</h2>
+    <p>You can test these API endpoints in Postman by forking the following collection:</p>
+    <p class="code"><a href="https://www.postman.com/platform-api-7015/workspace/orbit-wallet-backend/request/33656587-a94102a2-d48a-4a49-974b-b35631df1719?action=share&creator=33656587&ctx=documentation" target="_blank">Fork Orbit Wallet API Collection</a></p>
+    
     <h2>API Endpoints</h2>
-    <div style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
-      <p><span style="font-weight: bold; color: #0066cc;">GET</span> /health - Health check endpoint</p>
+    
+    <div class="endpoint">
+        <p><span class="method">GET</span> /api/users/:id - Get user by ID</p>
+        <p><strong>Example:</strong></p>
+        <p class="code">curl -X GET https://orbitwallet.vercel.app/api/users/67d690cfc9363e7747ce7880</p>
     </div>
-    <div style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
-      <p><span style="font-weight: bold; color: #0066cc;">GET</span> /api/users - Get all users</p>
+    
+    <div class="endpoint">
+        <p><span class="method">GET</span> /api/transactions/user/:userId - Get user transactions with filters</p>
+        <p><strong>Example:</strong></p>
+        <p class="code">curl -X GET "https://orbitwallet.vercel.app/api/transactions/user/67d690cfc9363e7747ce7880?status=success&type=credit&page=1&limit=10"</p>
     </div>
-    <div style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
-      <p><span style="font-weight: bold; color: #0066cc;">GET</span> /api/transactions - Get all transactions</p>
+    
+    <div class="endpoint">
+        <p><span class="method">GET</span> /api/transactions - Get all transactions with pagination</p>
+        <p><strong>Example:</strong></p>
+        <p class="code">curl -X GET "https://orbitwallet.vercel.app/api/transactions?status=pending&type=debit&page=1&limit=10"</p>
     </div>
+        <div class="endpoint">
+        <p><span class="method">GET</span> /health - Health check endpoint</p>
+        <p><strong>Example:</strong></p>
+        <p class="code">curl -X GET https://orbitwallet.vercel.app/health</p>
+    </div>
+</body>
+</html>
+
   `);
 });
 
